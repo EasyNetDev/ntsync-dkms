@@ -1,0 +1,17 @@
+Source: ntsync-dkms
+Section: admin
+Priority: optional
+Maintainer: EasyNetDev <devel@easynet.dev>
+Build-Depends: debhelper (>= 7.0.50~)
+Standards-Version: 3.9.1
+Homepage: https://github.com/EasyNetDev/ntsync-dkms
+Vcs-Browser: https://github.com/EasyNetDev/ntsync-dkms
+Vcs-Git: https://github.com/EasyNetDev/ntsync-dkms.git
+
+Package: ntsync-dkms
+Architecture: all
+Depends: ${misc:Depends}, dkms, linux-libc-dev, libc6-dev
+XB-Modaliases: ${modaliases}
+Description: NT synchronization primitive emulation
+ This module provides kernel support for emulation of Windows NT
+ synchronization primitives. It is not a hardware driver.
