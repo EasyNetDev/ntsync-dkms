@@ -6,3 +6,13 @@
 # ---------------------------------------------------------------------------
 
 obj-y			+= drivers/
+
+# Backport from 6.14 to 6.10 to 6.13
+INCLUDES += \
+	-include $(PWD)/include/uapi/linux/ntsync.h \
+	-I$(PWD)/include/
+
+ccflags-y += $(INCLUDES)
+subdir-ccflags-y += $(INCLUDES)
+
+#ccflags-y += -H

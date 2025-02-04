@@ -7,7 +7,6 @@ menu "Misc devices"
 
 config NTSYNC
 	tristate "NT synchronization primitive emulation"
-	depends on BROKEN
 	help
 	  This module provides kernel support for emulation of Windows NT
 	  synchronization primitives. It is not a hardware driver.

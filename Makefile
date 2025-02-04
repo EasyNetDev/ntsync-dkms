@@ -20,7 +20,7 @@ else
 
 $(info Called as external module Build)
 
-EXTRA_FLAGS += -I$(PWD)
+ccflags-y += -I$(PWD)/include
 
 #
 # KDIR is a path to a directory containing kernel source.
