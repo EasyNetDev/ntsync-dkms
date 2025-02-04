@@ -36,18 +36,19 @@ override_dh_auto_build:
 override_dh_auto_install:
 	# just create .install files from templates.
 	for i in dkms.conf \
+		$(PKG_kernel_src).links \
 		$(PKG_kernel_src).install \
 		$(PKG_kernel_src).postinst \
 		$(PKG_kernel_src).prerm; do \
 			sed \
-			-e "s|#PKG_NAME#|$(PKG_NAME)|" \
-			-e "s|#DRIVER_NAME#|$(DRIVER_NAME)|" \
-			-e "s|#VERSION#|$(VERSION)|" \
-			-e "s|#ARCH#|$(ARCH_SUFFIX)|" \
-			-e "s|#MOD_MIN_VER#|$(KVER_MAX_MAJOR).$(KVER_MIN_MINOR)|" \
-			-e "s|#MOD_MAX_VER#|$(KVER_MAX_MAJOR).$(KVER_MAX_MINOR)|" \
-			-e "s|#MIN_VER#|$(KVER_MAX_MAJOR).$(MOD_KVER_MIN_MINOR)|" \
-			-e "s|#MAX_VER#|$(KVER_MAX_MAJOR).$(MOD_KVER_MAX_MINOR)|" \
+			-e "s|#PKG_NAME#|$(PKG_NAME)|g" \
+			-e "s|#DRIVER_NAME#|$(DRIVER_NAME)|g" \
+			-e "s|#VERSION#|$(VERSION)|g" \
+			-e "s|#ARCH#|$(ARCH_SUFFIX)|g" \
+			-e "s|#MOD_MIN_VER#|$(KVER_MAX_MAJOR).$(KVER_MIN_MINOR)|g" \
+			-e "s|#MOD_MAX_VER#|$(KVER_MAX_MAJOR).$(KVER_MAX_MINOR)|g" \
+			-e "s|#MIN_VER#|$(KVER_MAX_MAJOR).$(MOD_KVER_MIN_MINOR)|g" \
+			-e "s|#MAX_VER#|$(KVER_MAX_MAJOR).$(MOD_KVER_MAX_MINOR)|g" \
 			debian/$$i.in > debian/$$i; \
 	done
 
