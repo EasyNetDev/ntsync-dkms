@@ -1,6 +1,12 @@
-ntsync-dkms (1.0.0) unstable; urgency=medium
+ntsync-dkms (1.0.1) unstable; urgency=medium
 
   * Add driver for Linux Kernel 6.14.
+
+ -- EasyNetDev <devel@easynet.dev>  Tue, 01 Apr 2025 20:28:11 +0300
+
+ntsync-dkms (1.0.0) unstable; urgency=medium
+
+  * Add driver for Linux Kernel 6.14-rc1.
   * Port driver from Kernel 6.14 to 6.10, 6.11, 6.12, 6.13.
 
  -- EasyNetDev <devel@easynet.dev>  Tue, 04 Feb 2025 13:06:11 +0300
