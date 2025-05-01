@@ -8,7 +8,7 @@ $(info Makefile: Include Config.mk)
 include $(PWD)/Config.mk
 
 # Autodetection if we have a driver for the specific MAJOR.MINOR version of kernel
-export KVER_MAJ_MIN := $(shell echo ${KERNELRELEASE} | sed "s/\([0-9]\+\.[0-9]\+\)\..*/\1/g")
+export KVER_MAJ_MIN := $(shell echo ${KERNELRELEASE} | sed "s/\([0-9]\+\.[0-9]\+\).*/\1/g")
 
 ifneq ($(KERNELRELEASE),)
 # call from kernel build system
