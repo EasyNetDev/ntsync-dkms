@@ -1,3 +1,10 @@
+ntsync-dkms (1.0.2) unstable; urgency=medium
+
+  * Add driver for Linux Kernel 6.15.
+  * Fix build for kernels with 2 digits, like 6.14-amd64
+
+ -- EasyNetDev <devel@easynet.dev>  Thu, 01 May 2025 15:07:47 +0300
+
 ntsync-dkms (1.0.1) unstable; urgency=medium
 
   * Add driver for Linux Kernel 6.14.
